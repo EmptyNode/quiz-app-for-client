@@ -28,6 +28,28 @@ body{
                 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.logo{
+    /* position: absolute; */
+    position: relative;
+    margin: 0 auto;
+    /* top: 10%; */
+    width: 60%; /* Change the width of the square box as needed */
+    height: 100vh; /* Change the height of the square box as needed */
+    color: #fff;
+    background: #007bff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adjust the shadow properties as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+
 .info_box.activeInfo,
 .quiz_box.activeQuiz,
 .result_box.activeResult{
@@ -35,6 +57,17 @@ body{
     z-index: 5;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
+}
+
+.start_btn{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    height: 40vh;
+    box-shadow: none;
+    gap: 70px;
 }
 
 .start_btn button{
@@ -47,6 +80,19 @@ body{
     border-radius: 5px;
     background: #fff;
     cursor: pointer;
+}
+
+.start_btn h1{
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+    padding: 60px;
 }
 
 .info_box{
