@@ -12,6 +12,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
+    <audio id="correctSound" src="js/images/right.mp3"></audio>
+    <audio id="wrongSound" src="js/images/wrong.aac"></audio>
   </head>
   <body>
     <div class="container">
@@ -55,7 +57,7 @@
           <div class="title">কুইজ প্রতিযোগিতা</div>
           <div class="timer">
             <div class="time_left_txt">মোট সময়</div>
-            <div class="timer_sec">15</div>
+            <div class="timer_sec"></div>
           </div>
           <div class="time_line"></div>
         </header>
@@ -63,7 +65,12 @@
           <div class="que_text">
             <!-- Here I've inserted question from JavaScript -->
           </div>
-          <div class="que_image" style="display: flex;"></div>
+          <div style="display: flex; flex-direction: row; gap: 10px;">
+            <div class="que_image2" style="display: flex"></div>
+            <div class="que_image1" style="display: flex"></div>
+            <div class="que_image3" style="display: flex"></div>
+            <div class="que_image4" style="display: flex"></div>
+          </div>
           <div class="option_list">
             <!-- Here I've inserted options from JavaScript -->
           </div>

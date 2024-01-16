@@ -4,6 +4,7 @@ questions = shuffleArray(questions.map(question => ({
     answer: question.answer // Store the index of the correct answer
 
 })));
+questions = questions.slice(0, 5);
 
 //selecting all required elements
 const start_btn = document.querySelector(".start_btn button");
@@ -112,7 +113,11 @@ next_btn.onclick = ()=>{
 // getting questions and options from array
 function showQuetions(index) {
     const que_text = document.querySelector(".que_text");
-    const que_image = document.querySelector(".que_image");
+    const que_image1 = document.querySelector(".que_image1");
+    const que_image2 = document.querySelector(".que_image2");
+    const que_image3 = document.querySelector(".que_image3");
+    const que_image4 = document.querySelector(".que_image4");
+    const option_list = document.querySelector(".option_list");
 
     let i = 1;
     let que_tag = '<span>' + convertToBengaliNumber(index + 1) + ". " + questions[index].question + '</span>';
@@ -125,27 +130,36 @@ function showQuetions(index) {
     option_list.innerHTML = option_tag;
 
     if (questions[index].image) {
-        let image_tag = '<img src="' + questions[index].image + '" alt="Question Image">';
-
-        if (questions[index].question === "এই গুলির মধ্যে কোনটি মিলেট") {
-            // Add more pictures
-            image_tag += '<img src="js/images/65b.jpg" alt="Additional Image 1">';
-            image_tag += '<img src="js/images/65c.jpg" alt="Additional Image 2">';
-            image_tag += '<img src="js/images/65d.jpg" alt="Additional Image 3">';
+        let image_tag1 = '<img src="' + questions[index].image + '" alt="Question Image">';
+        let image_tag2 = '';
+        let image_tag3 = '';
+        let image_tag4 = '';
+        if (questions[index].question === "এই গুলির মধ্যে কোনটি মিলেট?") {
+            image_tag2 = '<img src="js/images/65b.jpg" alt="Additional Image 1">';
+            image_tag3 = '<img src="js/images/65c.jpg" alt="Additional Image 2">';
+            image_tag4 = '<img src="js/images/65d.jpg" alt="Additional Image 3">';
         }
-        que_image.innerHTML = image_tag;
-
+        que_image1.innerHTML = image_tag1;
+        que_image2.innerHTML = image_tag2;
+        que_image3.innerHTML = image_tag3;
+        que_image4.innerHTML = image_tag4;
     } else {
-        que_image.innerHTML = ''; // Clear image container if no image is present
+        que_image1.innerHTML = ''; // Clear image container if no image is present
+        que_image2.innerHTML = '';
+        que_image3.innerHTML = '';
+        que_image4.innerHTML = '';
     }
 
-    const option = option_list.querySelectorAll(".option");
+    const options = option_list.querySelectorAll(".option");
 
     // set onclick attribute to all available options
-    for (i = 0; i < option.length; i++) {
-        option[i].setAttribute("onclick", "optionSelected(this)");
+    for (i = 0; i < options.length; i++) {
+        options[i].addEventListener("click", function() {
+            optionSelected(this);
+        });
     }
 }
+
 
 // creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
@@ -164,11 +178,15 @@ function optionSelected(answer){
         userScore += 1; //upgrading score value with 1
         answer.classList.add("correct"); //adding green color to correct selected option
         answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
+        const correctSound = document.getElementById("correctSound");
+        correctSound.play();
         console.log("Correct Answer");
         console.log("Your correct answers = " + userScore);
     }else{
         answer.classList.add("incorrect"); //adding red color to correct selected option
         answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
+        const correctSound = document.getElementById("wrongSound");
+        correctSound.play();
         console.log("Wrong Answer");
 
         for(i=0; i < allOptions; i++){
@@ -254,10 +272,12 @@ function startTimerLine(time){
     }
 }
 
+var x = 4;
 function queCounter(index){
     //creating a new span tag and passing the question number and total question
-    let totalQueCounTag = '<span><p>'+ "অবশিষ্ট প্রশ্ন সংখ্যা " + "-" + convertToBengaliNumber(questions.length) +'</p></span>';
+    let totalQueCounTag = '<span><p>'+ "অবশিষ্ট প্রশ্ন সংখ্যা " + "-" + convertToBengaliNumber(x) +'</p></span>';
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
+    x--;
 }
 
 function convertToBengaliNumber(number) {
