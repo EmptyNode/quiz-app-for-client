@@ -112,19 +112,32 @@ next_btn.onclick = ()=>{
 // getting questions and options from array
 function showQuetions(index) {
     const que_text = document.querySelector(".que_text");
+    const que_image = document.querySelector(".que_image");
 
-    // Shuffle the options for the current question
-    questions[index].options = shuffleArray(questions[index].options);
-
-    //creating a new span and div tag for question and option and passing the value using array index
     let i = 1;
-    let que_tag = '<span>' + convertToBengaliNumber(index+1) + ". " + questions[index].question + '</span>';
+    let que_tag = '<span>' + convertToBengaliNumber(index + 1) + ". " + questions[index].question + '</span>';
     let option_tag = '<div class="option"><span>' + questions[index].options[0] + '</span></div>' +
         '<div class="option"><span>' + questions[index].options[1] + '</span></div>' +
         '<div class="option"><span>' + questions[index].options[2] + '</span></div>' +
         '<div class="option"><span>' + questions[index].options[3] + '</span></div>';
-    que_text.innerHTML = que_tag; //adding new span tag inside que_tag
-    option_list.innerHTML = option_tag; //adding new div tag inside option_tag
+
+    que_text.innerHTML = que_tag;
+    option_list.innerHTML = option_tag;
+
+    if (questions[index].image) {
+        let image_tag = '<img src="' + questions[index].image + '" alt="Question Image">';
+
+        if (questions[index].question === "এই গুলির মধ্যে কোনটি মিলেট") {
+            // Add more pictures
+            image_tag += '<img src="js/images/65b.jpg" alt="Additional Image 1">';
+            image_tag += '<img src="js/images/65c.jpg" alt="Additional Image 2">';
+            image_tag += '<img src="js/images/65d.jpg" alt="Additional Image 3">';
+        }
+        que_image.innerHTML = image_tag;
+
+    } else {
+        que_image.innerHTML = ''; // Clear image container if no image is present
+    }
 
     const option = option_list.querySelectorAll(".option");
 
