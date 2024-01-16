@@ -230,6 +230,14 @@ function showResult(){
     const scoreText = result_box.querySelector(".score_text");
     let scoreTag = '<span> <p> '+ convertToBengaliNumber(questions.length) +' </p> টি  প্রশ্নের মধ্যে আপনি <p>'+ convertToBengaliNumber(userScore) +'</p> পেয়েছেন </span>';
     scoreText.innerHTML = scoreTag;
+
+    const endSound = document.getElementById("endSound");
+    if (userScore > 3) {
+        endSound.src = "js/images/endvictory.mp3"; // Change the path accordingly
+    } else {
+        endSound.src = "js/images/endloss.mp3"; // Change the path accordingly
+    }
+    endSound.play(); 
 }
 
 function startTimer(time){
