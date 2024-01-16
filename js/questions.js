@@ -1,5 +1,4 @@
 let questions = [
-  
   {
     numb: 1,
     question: "ফসলের সরকারী সহায়ক মূল্য নির্ধারণ কোনটি?",
@@ -329,5 +328,4 @@ let questions = [
     options: ["ধুতুরা", "কলকে", "জবা", "ঘেঁটু"],
     image: "js/images/60.jpg",
   },
-  
 ];
