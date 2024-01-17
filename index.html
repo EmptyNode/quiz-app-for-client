@@ -1,111 +1,15 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal - www.codingnepalweb.com -->
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agriculuture Quiz</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- FontAweome CDN Link for Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <audio id="correctSound" src="js/images/right.mp3"></audio>
-    <audio id="wrongSound" src="js/images/wrong.aac"></audio>
-    <audio id="endSound" src=""></audio>
-  </head>
-  <body>
-    <div class="container">
-      <!-- start Quiz button -->
-      <!-- <div class="logo"><img src="./logo.png" alt="logo"></div> -->
-
-      <div class="start_btn">
-        <h1>Agriculture Quiz</h1>
-        <button>কুইজ শুরু করুন</button>
-      </div>
-
-      <!-- Info Box -->
-      <div class="info_box">
-        <div class="info-title"><span>এই কুইজের কিছু নিয়ম</span></div>
-        <div class="info-list">
-          <div class="info">
-            ১. প্রতি প্রশ্নে আপনি পাবেন <span>15 সেকেন্ড</span>।
-          </div>
-          <div class="info">
-            ২. একবার আপনি আপনার উত্তর বেছে নিলে, তা ফিরে যেতে পারবে না।
-          </div>
-          <div class="info">
-            ৩. সময় শেষ হলে আপনি কোনও অপশন বেছে নিতে পারবেন না।
-          </div>
-          <div class="info">
-            ৪. খেলা চলাকালীন সময়ে আপনি কুইজ থেকে বাহির হতে পারবেন না।
-          </div>
-          <div class="info">
-            ৫. আপনি আপনার সঠিক উত্তরের ভিত্তিতে পয়েন্ট পাবেন।
-          </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;">
+    <a href="index1.html" style="display: block; width: 100%; height: 100%;">
+        <div style="background-image: url('js/images/land.jpeg'); background-size: cover; width: 100vw; height: 100vh;">
+            <!-- Your content goes here -->
         </div>
-        <div class="buttons">
-          <button class="quit">বাহির হোন</button>
-          <button class="restart">শুরু করুন</button>
-        </div>
-      </div>
-
-      <!-- Quiz Box -->
-      <div class="quiz_box">
-        <header>
-          <div class="title">কুইজ প্রতিযোগিতা</div>
-          <div class="timer">
-            <div class="time_left_txt">মোট সময়</div>
-            <div class="timer_sec"></div>
-          </div>
-          <div class="time_line"></div>
-        </header>
-        <section>
-          <div class="que_text">
-            <!-- Here I've inserted question from JavaScript -->
-          </div>
-          <div style="display: flex; flex-direction: row; gap: 10px;">
-            <div class="que_image2" style="display: flex"></div>
-            <div class="que_image1" style="display: flex"></div>
-            <div class="que_image3" style="display: flex"></div>
-            <div class="que_image4" style="display: flex"></div>
-          </div>
-          <div class="option_list">
-            <!-- Here I've inserted options from JavaScript -->
-          </div>
-        </section>
-
-        <!-- footer of Quiz Box -->
-        <footer>
-          <div class="total_que">
-            <!-- Here I've inserted Question Count Number from JavaScript -->
-          </div>
-          <button class="next_btn">পরবর্তী প্রশ্ন</button>
-        </footer>
-      </div>
-
-      <!-- Result Box -->
-      <div class="result_box">
-        <div class="icon">
-          <i class="fas fa-crown"></i>
-        </div>
-        <div class="complete_text">আপনি কুইজটি সম্পন্ন করেছেন!</div>
-        <div class="score_text">
-          <!-- Here I've inserted Score Result from JavaScript -->
-        </div>
-        <div class="buttons">
-          <button class="restart" style="display: none">Replay Quiz</button>
-          <button class="quit">বাহির</button>
-        </div>
-      </div>
-
-      <!-- Inside this JavaScript file I've inserted Questions and Options only -->
-      <script src="js/questions.js"></script>
-
-      <!-- Inside this JavaScript file I've coded all Quiz Codes -->
-      <script src="js/script.js"></script>
-    </div>
-  </body>
+    </a>
+</body>
 </html>
